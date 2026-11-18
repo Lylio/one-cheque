@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#173c32">
+<title>One Cheque | Shared table</title>
+<link rel="stylesheet" href="/style.css">
+<script type="module" src="/app.js"></script>
+</head>
+<body>
+<header><div class="shell mast"><a class="brand" href="/"><span aria-hidden="true">≋</span> One Cheque</a><span class="mast-note">GROUP DINING BILL CALCULATOR</span></div></header>
+<main class="shell">
+  <section class="intro"><h1>One table.<br><em>One cheque.</em></h1><p>Add your orders from your own phone. Pay the restaurant together.</p></section>
+  <p id="status" role="status"></p>
+  <section id="entry" class="add-diner" hidden>
+    <h2 id="entry-title"></h2>
+    <form id="entry-form" class="stack">
+      <label for="name">Your name</label>
+      <div class="input-row"><input id="name" name="name" placeholder="e.g. Alex" maxlength="40" required><button id="entry-button" class="primary"></button></div>
+    </form>
+    <a href="/" id="start-another" hidden>Start a different table</a>
+    <a id="resume" hidden>Resume your last table</a>
+  </section>
+  <div id="table" class="layout" hidden>
+    <section aria-labelledby="orders-title">
+      <div class="section-head"><h2 id="orders-title">Table orders</h2><span id="connection" role="status"></span></div>
+      <section class="diner">
+        <div class="section-head"><strong id="your-name"></strong><strong id="your-total"></strong></div>
+        <div id="your-orders"></div>
+        <form id="item-form">
+          <label>Menu item<input name="name" maxlength="80" placeholder="e.g. Halloumi burger" required></label>
+          <label>Price (£)<input name="price" inputmode="decimal" placeholder="0.00" pattern="[0-9]{1,5}(\.[0-9]{1,2})?" required></label>
+          <button id="add-item" class="primary">+ Add item</button>
+        </form>
+      </section>
+      <div id="other-orders"></div>
+    </section>
+    <aside aria-labelledby="bill-title">
+      <div class="receipt">
+        <div class="section-head"><h2 id="bill-title">Table bill</h2><span class="receipt-mark" aria-hidden="true">≋</span></div>
+        <div id="breakdown"></div>
+        <form id="service-form" hidden>
+          <label for="service">Service charge or tip (£)</label>
+          <div class="input-row"><input id="service" name="price" inputmode="decimal" pattern="[0-9]{1,5}(\.[0-9]{1,2})?" required><button class="secondary">Apply</button></div>
+          <small>Split in proportion to each diner's orders.</small>
+        </form>
+        <div class="grand"><span id="total-label">Running total</span><strong id="total"></strong></div>
+        <button id="finalise" class="primary wide" hidden>Finalise bill</button>
+        <button id="server-button" class="primary wide" hidden>Show total for server</button>
+        <button id="copy-summary" class="secondary wide">Copy breakdown</button>
+        <div id="invite" hidden>
+          <label for="link">Invite diners</label>
+          <input id="link" readonly>
+          <button id="copy-link" class="secondary wide">Copy invite link</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+<dialog id="edit-dialog">
+  <h2>Edit item</h2>
+  <form id="edit-form" class="stack">
+    <label>Menu item<input name="name" maxlength="80" required></label>
+    <label>Price (£)<input name="price" inputmode="decimal" pattern="[0-9]{1,5}(\.[0-9]{1,2})?" required></label>
+    <button class="primary">Save changes</button>
+    <button type="button" class="secondary" id="cancel-edit">Cancel</button>
+    <p id="edit-error" role="status"></p>
+  </form>
+</dialog>
+<dialog id="server-view" aria-labelledby="server-label">
+  <form method="dialog"><button class="secondary">Close</button></form>
+  <h2 id="server-label">Total to pay</h2><strong id="server-total"></strong><p>One payment for the table</p>
+</dialog>
+<dialog id="copy-dialog">
+  <form method="dialog"><button class="secondary">Close</button></form>
+  <label for="copy-text">Select and copy this text</label><textarea id="copy-text" readonly rows="8"></textarea>
+</dialog>
+</body>
+</html>
