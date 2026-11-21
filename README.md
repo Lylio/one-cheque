@@ -2,6 +2,10 @@
 
 One shared restaurant bill, with each diner adding their own orders from their phone.
 
+## System Architecture & Data Flow
+
+![One Cheque System Architecture](docs/one-cheque-architecture.svg)
+
 ## Run locally
 
 From this folder, run with **Java 21**:
