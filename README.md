@@ -2,6 +2,17 @@
 
 One shared restaurant bill, with each diner adding their own orders from their phone.
 
+### Tech Stack
+
+| Component | Tech |
+| --- | --- |
+| Local Run | [![Local Setup](https://img.shields.io/badge/Local%20Setup-555555?style=for-the-badge)](#run-locally) |
+| Frontend | ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white) ![CSS](https://img.shields.io/badge/CSS-663399?style=for-the-badge&logo=css&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=323330) |
+| Backend | ![Java 21](https://img.shields.io/badge/JAVA-JDK%2021-green?style=for-the-badge) ![JDK HTTP Server](https://img.shields.io/badge/JDK%20HTTP%20Server-364F6B?style=for-the-badge) |
+| Storage | ![Local Files](https://img.shields.io/badge/Local%20Files-526D82?style=for-the-badge) |
+| Container | ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) |
+| Repo Size | ![Repo Size](https://img.shields.io/github/repo-size/Lylio/one-cheque?style=for-the-badge) |
+
 ## System Architecture & Data Flow
 
 ![One Cheque System Architecture](docs/one-cheque-architecture.svg)
